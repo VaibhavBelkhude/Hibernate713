@@ -1,0 +1,16 @@
+
+   CREATE TABLE "SYSTEM"."STUDENT" 
+   (	"SID" NUMBER(*,0) NOT NULL ENABLE, 
+	"SNAME" VARCHAR2(20 BYTE), 
+	"SADDR" VARCHAR2(20 BYTE), 
+	"PHONE" NUMBER, 
+	"FEES" FLOAT(126), 
+	 CONSTRAINT "TABLE1_PK" PRIMARY KEY ("SID")
+   )
+   ===========================================
+   imp point Save method:
+   =====================
+   1)It can save object within boundaries and outside boundaries
+   2)It return generated id and return type is serializable 
+   3)It will create a new row in the table for detached object 
+   4)It is only supported by Hibernate 

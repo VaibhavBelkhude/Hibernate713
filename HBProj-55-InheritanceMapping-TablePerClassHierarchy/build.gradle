@@ -1,0 +1,26 @@
+
+
+plugins {
+   
+    id 'application'
+}
+
+repositories {
+    
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.30.Final'
+    // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8
+implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.1.0.0'
+  // https://mvnrepository.com/artifact/org.projectlombok/lombok
+compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+ // https://mvnrepository.com/artifact/org.hibernate/hibernate-hikaricp
+implementation group: 'org.hibernate', name: 'hibernate-hikaricp', version: '5.4.30.Final'
+ // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
+    
+}

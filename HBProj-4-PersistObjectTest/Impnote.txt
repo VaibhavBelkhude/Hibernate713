@@ -1,0 +1,10 @@
+1)Detached Object find it show Exception:
+=======================================
+Exception in thread
+ "main" javax.persistence.PersistenceException:
+ ==============================================
+ 2)It does not return anything. Its void return type. 
+ ==================================================
+ 3)It can only save object within the transaction boundaries
+ =============================================================
+ 4)It is also supported by JPA

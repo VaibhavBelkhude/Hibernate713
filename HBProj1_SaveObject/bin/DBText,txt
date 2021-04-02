@@ -1,0 +1,76 @@
+//hibernate mapping file
+Actor.hbm.xlm
+=============
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.nt.entity.Actor" table="ACTOR">
+<!-- singular id field cofg -->
+<id name="actorid" column="ACTORID"/>
+<!-- other property mapping -->
+<property name="actorName" column="ACTORNAME"/>
+<property name="addrs" column="ADDRS"/>
+<property name="phone" column="PHONE"/>
+<property name="enumeration" column="ENUMERATION"/>
+</class>
+</hibernate-mapping>
+=========================================================
+Hibernate Configuration file
+----------------------------
+hibernate.cfg.xml
+==========================
+<hibernate-configuration>
+<session-factory>
+<!-- connection property -->
+<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver </property>
+<property name="connection.driver_url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+<property name="connection.username">scott</property>
+<property name="connection.password">vaibhav92</property>
+<!-- Hibernate property cfg(optional) -->
+<property name="hibernate.show_sql">true</property>
+<!-- mapping file  (mandatory)-->
+<mapping-resource name="com/nt/entity/Actor.hbm.xml"/>
+</session-factory>
+
+</hibernate-configuration>
+=================================================================
+MYSQL DATABASE:
+--------------
+CREATE TABLE `vaibhav1db`.`actor` (
+  `ACTORID` INT NOT NULL,
+  `ACTORNAME` VARCHAR(45) NULL,
+  `ACTORADDRS` VARCHAR(45) NULL,
+  `PHONE` VARCHAR(45) NULL,
+  `ENUMARATION` FLOAT NULL,
+  PRIMARY KEY (`ACTORID`));
+=============================================================
+<hibernate-configuration>
+<session-factory>
+
+     
+      
+      <property name = "hibernate.connection.driver_class">
+          com.mysql.jdbc.Driver
+      </property>
+      
+      <!-- Assume test is the database name -->
+      
+      <property name = "hibernate.connection.url">
+         jdbc:mysql:///vaibhav1DB
+      </property>
+      
+      <property name = "hibernate.connection.username">
+         root
+      </property>
+      
+      <property name = "hibernate.connection.password">
+         root
+      </property>
+      
+      <!-- List of XML mapping files -->
+      <mapping resource = "com/nt/entity/Actor.hbm.xml"/>
+      
+   </session-factory>
+</hibernate-configuration>

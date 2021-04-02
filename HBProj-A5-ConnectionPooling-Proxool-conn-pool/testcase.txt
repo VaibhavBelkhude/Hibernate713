@@ -1,0 +1,41 @@
+com.zaxxer.hikari.hibernate.HikariConnectionProvider 
+has been deprecated for versions of "
+ + "Hibernate 4.3.6 and newer. 
+  Please switch to 
+  (org.hibernate.hikaricp.internal.HikariCPConnectionProvider.")
+  otherwise:it will throws Exception:(  throw new HibernateException(e);
+  ==============================================================================
+  Caused by: org.hibernate.HibernateException: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at com.zaxxer.hikari.hibernate.HikariConnectionProvider.configure(HikariConnectionProvider.java:91)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:145)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 15 more
+Caused by: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at com.zaxxer.hikari.util.PropertyElf.setProperty(PropertyElf.java:154)
+	at com.zaxxer.hikari.util.PropertyElf.lambda$setTargetFromProperties$0(PropertyElf.java:57)
+	at java.base/java.util.concurrent.ConcurrentHashMap.forEach(ConcurrentHashMap.java:1603)
+	at java.base/java.util.Properties.forEach(Properties.java:1440)
+	at com.zaxxer.hikari.util.PropertyElf.setTargetFromProperties(PropertyElf.java:52)
+	at com.zaxxer.hikari.HikariConfig.<init>(HikariConfig.java:134)
+	at com.zaxxer.hikari.hibernate.HikariConfigurationUtil.loadConfiguration(HikariConfigurationUtil.java:60)
+	at com.zaxxer.hikari.hibernate.HikariConnectionProvider.configure(HikariConnectionProvider.java:86)
+	... 23 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at com.zaxxer.hikari.util.PropertyElf.setProperty(PropertyElf.java:140)
+	... 30 more
+Caused by: java.lang.IllegalArgumentException: connectionTimeout cannot be less than 250ms
+	at com.zaxxer.hikari.HikariConfig.setConnectionTimeout(HikariConfig.java:185)
+	... 35 more
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "factory" is null
+	at com.nt.test.HikariConnectionProviderSaveObjectTest1.main(HikariConnectionProviderSaveObjectTest1.java:18)
+  

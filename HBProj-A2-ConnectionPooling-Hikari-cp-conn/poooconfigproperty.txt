@@ -1,0 +1,17 @@
+ <!-- HikariCP settings -->
+  <property name="hikari.connectionTimeout">50000</property> 
+  <property name="hibernate.hikari.minimumIdle">10</property>
+  <property name="hibernate.hikari.maximumPoolSize">20</property> 
+  <property name="hibernate.hikari.idleTimeout">30000</property> 
+ ====================================================================
+ <!-- c3p0-config settings -->
+==================================================
+	<property name="maxPoolSize">30</property>
+    <property name="minPoolSize">10</property>
+    <property name="maxPoolSize">1000</property>
+    <property name="minPoolSize">100</property>
+    <property name="numHelperThreads">50</property>
+ ========================================================
+ 
+    
+   

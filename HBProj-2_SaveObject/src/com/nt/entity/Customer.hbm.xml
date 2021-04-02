@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.nt.entity.Customer" table="Customer">
+
+<id name="Cno" column="cno"/>
+
+ <!--singular id field  -->
+
+<property name="cname" column="CNAME"/>
+<property name="caddrs" column="CADDRS"/>
+<property name="phone" column="PHONE"/>
+<property name="email" column="EMAIL"/>
+<property name="cproduct" column="CPRODUCT"/>
+</class>
+</hibernate-mapping>

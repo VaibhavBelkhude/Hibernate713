@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-
+//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+<property name="connection_driver">oracle.jdbc.driver.OracleDriver</property>
+<property name="connection_url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+<property name="connection_username">system</property>
+<property name="connection_password">vaibhav92</property>
+
+<!-- Hibernate Propety  (optional)-->
+<property name="show_sql">true</property>
+<property name="format_sql">true</property>
+<property name="hbm2ddl.auto">update</property>
+ <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+<!-- mapping file (mandatory) -->
+
+<mapping resource="com/nt/entity/Student.hbm.xml"/>
+</session-factory>
+
+</hibernate-configuration>
