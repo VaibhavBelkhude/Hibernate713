@@ -1,7 +1,12 @@
 package com.nt.test;
 
-import com.nt.entity.CallerTune;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
+import com.nt.entity.CallerTune;
+import com.nt.utility.HibernateUtil;
 public class LoadAndUpdateObjectTest {
 
 	public static void main(String[] args) {
@@ -12,9 +17,14 @@ public class LoadAndUpdateObjectTest {
 				try(Session ses=factory.openSession()){
 					tx=ses.beginTransaction();
 					//Load object
-					CallerTune tune=ses.get(CallerTune.class,1);
+					CallerTune tune=ses.get(CallerTune.class,21);
+					if(tune==null) {
+						System.out.println("Object/record not found");
+						return;
+					}
 					//modify object
-					tune.setCallerTune("airtel music");
+					//tune.setCallerTune("airtel music");
+					tune.setProvider("vi");
 					tx.commit();
 					System.out.println("Object is updated for    "+tune.getChangeCount()+"   times");
 				}//try
