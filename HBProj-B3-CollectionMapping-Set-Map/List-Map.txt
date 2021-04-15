@@ -1,0 +1,5 @@
+<list name="friends" table="STUDENT_FRIENDS">
+             <key column="stud_id" />
+            <!-- <index column="FRIEND_INDEX" type="int" length="20"/> -->
+            <list-index column="FRIEND_INDEX" base="1" />
+             <element column="FRIEND_NAME" length="15" type="string"/>
